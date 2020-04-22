@@ -2,8 +2,8 @@ FROM debian:buster
 
 # Metainformation
 LABEL name="lineageos-docker" \
-      maintainer="aliaksandr.babai@gmail.com" \
-      version="0.3"
+      maintainer="benlue@s3root.ovh" \
+      version="0.1"
 
 ENV DEBIAN_FRONTEND noninteractive
 
