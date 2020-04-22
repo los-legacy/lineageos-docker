@@ -8,6 +8,7 @@ LABEL name="lineageos-docker" \
 ENV DEBIAN_FRONTEND noninteractive
 
 # Arguments defenition
+ARG APT_MIRROR="debian.proxad.net"
 ARG external_dir="include"
 ARG internal_dir=".init"
 ARG work_dir="android"
@@ -22,6 +23,9 @@ ENV WORK_DIR=$USER_HOME/$work_dir
 ENV CCACHE_DIR=$WORK_DIR/.ccache
 ENV INIT_DIR=$USER_HOME/$internal_dir
 ENV OUT_DIR=$WORK_DIR/out
+
+# allow replacing httpredir or deb mirror
+RUN sed -ri "s/(httpredir|deb).debian.org/$APT_MIRROR/g" /etc/apt/sources.list
 
 # Install commons build dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -40,7 +44,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     lib32ncurses5-dev \
     lib32readline-dev \
     lib32z1-dev \
-    libesd0-dev \
+    #libesd0-dev \
     liblz4-tool \
     libncurses5-dev \
     libsdl1.2-dev \
@@ -49,7 +53,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libxml2 \
     libxml2-utils \
     lzop \
-    openjdk-8-jdk \
+    #openjdk-8-jdk \
     pngcrush \
     rsync \
     schedtool \
