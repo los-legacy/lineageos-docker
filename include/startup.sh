@@ -20,6 +20,7 @@ git config --global user.name 'Jenkins'
 git config --global user.email 'jenkins@s3root.ovh'
 
 repo init -u https://github.com/LineageOS/android.git -b lineage-17.1
+repo sync --no-clone-bundle --force-sync
 
 # Show general info
 screenfetch
