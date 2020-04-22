@@ -56,6 +56,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     lzop \
     #openjdk-8-jdk \
     pngcrush \
+    python \
     rsync \
     schedtool \
     squashfs-tools \
