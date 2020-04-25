@@ -21,7 +21,7 @@ git config --global user.email 'jenkins@s3root.ovh'
 git config --global color.ui true
 
 repo init -u https://github.com/LineageOS/android.git -b lineage-17.1
-repo sync --no-clone-bundle --force-sync
+#repo sync --no-clone-bundle --force-sync
 
 # Show general info
 screenfetch
