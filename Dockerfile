@@ -108,5 +108,5 @@ VOLUME $OUT_DIR
 # Configure start up
 USER $USER
 WORKDIR $WORK_DIR
-ENTRYPOINT ["/bin/bash"]
+ENTRYPOINT ["/root/docker_entrypoint.sh"]
 CMD ["-l"]
